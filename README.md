@@ -24,7 +24,7 @@ Almost everything on the page comes from `src/content.ts`:
 | Skill groups | `skills` |
 | Notes shown in "My corner" | `corner` |
 
-To show LinkedIn buttons, set `profile.links.linkedin` to your profile URL.
+The LinkedIn buttons use `profile.links.linkedin`; set it to "" to hide them.
 
 Files in `public/`:
 

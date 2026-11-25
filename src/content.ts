@@ -16,8 +16,7 @@ export const profile = {
   interests: ["trying new restaurants", "exploring new cities", "watching a movie", "reading a good book", "cooking something new"],
   links: {
     github: "https://github.com/Rujuta99",
-    // Add your LinkedIn URL to show the LinkedIn buttons.
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/rujuta-tambewagh/",
   },
 }
 
