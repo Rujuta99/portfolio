@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rujuta Tambewagh — portfolio
 
-## Getting Started
+My personal site: a single page with an intro, projects, blog posts, skills, a way to get in touch, and a small illustrated "My corner". Built with [Next.js](https://nextjs.org) and Tailwind CSS.
 
-First, run the development server:
+## Running it locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editing the content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Almost everything on the page comes from `src/content.ts`:
 
-## Learn More
+| What | Where in `src/content.ts` |
+| --- | --- |
+| Name, role, location, bio, email, links | `profile` |
+| The rotating "When I'm not building, I'm probably…" line | `profile.interests` |
+| Projects (cards, tags, GitHub links) | `projects` |
+| Blog posts (newest first) | `posts` |
+| Skill groups | `skills` |
+| Notes shown in "My corner" | `corner` |
 
-To learn more about Next.js, take a look at the following resources:
+To show LinkedIn buttons, set `profile.links.linkedin` to your profile URL.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Files in `public/`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `Rujuta_Tambewagh_Resume.pdf` is what the Resume button downloads. Replace it to update the resume.
+- `rujuta-headshot.jpg` is the intro photo (a square image works best). If you rename it, update `profile.photo`.
 
-## Deploy on Vercel
+## How it's put together
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/app/page.tsx` is the page layout.
+- `src/components/intro-gate.tsx` is the intro that slides down as you scroll to reveal the work.
+- `src/components/cozy-corner.tsx` is the "My corner" drawing.
+- `src/components/reveal-observer.tsx` fades sections in as they scroll into view.
+- `src/app/globals.css` holds the colour palette and animations.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploying
+
+The easiest option is [Vercel](https://vercel.com/new): import the repository and it builds with `npm run build`.
